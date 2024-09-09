@@ -3,22 +3,22 @@ const config = {
     development: {
       database: 'sps',
       username: 'root',
-      password: 'Itone@123',
+      password: 'Aen@vk16mysql',
       host: 'localhost',
       dialect: 'mysql'
     },
     test: {
       database: 'test_db',
       username: 'root',
-      password: 'Itone@123',
+      password: 'Aen@vk16mysql',
       host: 'localhost',
-      dialect: "sqlite",
+      dialect: "mysql",
       storage: ":memory:"
     },
     production: {
       database: 'sps_prod',
       username: 'root',
-      password: 'Itone@123',
+      password: 'Aen@vk16mysql',
       host: 'localhost',
       dialect: 'mysql'
     }

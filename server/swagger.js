@@ -1,26 +1,28 @@
-
+import swaggerJSDoc from 'swagger-jsdoc';
 
 // Swagger definition
-const swaggerOptions = {
-  definition: {
-    openapi: '3.0.0',
-    info: {
-      title: 'Your API',
-      version: '1.0.0',
-      description: 'API for your service',
-    },
-    components: {
-      securitySchemes: {
-        bearerAuth: {
-          type: 'http',
-          scheme: 'bearer',
-          bearerFormat: 'JWT',
-        },
-      },
-    },
+const swaggerDefinition = {
+  openapi: '3.0.0',
+  info: {
+    title: 'Your API Documentation',
+    version: '1.0.0',
+    description: 'Documentation for your API',
   },
-  apis: ['./server.js'], // files containing annotations as above
+  servers: [
+    {
+      url: 'http://localhost:8081', // Ensure this matches your server URL
+    },
+  ],
 };
 
+// Options for the swagger docs
+const options = {
+  swaggerDefinition,
+  // Path to the API specs
+  apis: ['./models/**/*.js', './server/**/*.js'], // Adjust path to where your JSDoc comments are located
+};
 
-export default swaggerOptions;
+// Initialize swagger-jsdoc
+const swaggerSpec = swaggerJSDoc(options);
+
+export default swaggerSpec;
